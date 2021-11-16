@@ -2,7 +2,7 @@
 
     if($_POST) {
         // database connection
-        $conn = new mysqli("localhost","root","","stadium_mngt");
+        require_once('connect.php');
 
         // check db connection
         if($conn->connect_error) {
@@ -83,7 +83,10 @@
                   </div>
                </div>
                <div class="field">
-               <input type="submit" name="submit" class="ui button" value="Login">
+                  <input type="submit" name="submit" class="ui button" value="Login">
+               </div>
+               <div class="field right center aligned">
+                  <label>Do not have an account? <a href="register.php">Sign Up</a></label>
                </div>
             </form>
          </div>

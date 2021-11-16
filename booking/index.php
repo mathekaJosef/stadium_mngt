@@ -68,7 +68,7 @@ generate_order();
 ?>
 
 <script>
-setTimeout(function(){$('#proceed').siblings().hide();$('.gload').hide();document.getElementById("proceed").innerHTML="<a href='booking.php' class='ui button small green'>Done! Proceed</a> <a href='../admin/login.php' class='ui button small orange'>Admin Login</a> <a href='logout.php' class='ui button small red'>Logout</a> "},5000);
+setTimeout(function(){$('#proceed').siblings().hide();$('.gload').hide();document.getElementById("proceed").innerHTML="<a href='booking.php' class='ui button small green'>Done! Proceed</a> <a href='../admin/login.php' class='ui button small orange'>Admin Login</a> <a href='logout.php' class='ui button small blue right floated'>Logout</a> "},5000);
 </script>
 </body>
 </html>

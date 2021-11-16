@@ -1,4 +1,11 @@
-<?php session_start()?>
+<?php
+  session_start();
+  if(!empty($_SESSION["username"])) {
+    require_once('connect.php');
+    $username = $_SESSION["username"];
+    $sql = mysqli_query($conn, "SELECT * FROM registered_users WHERE username = '$username'");
+    $row = mysqli_fetch_array($sql);
+?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -67,6 +74,9 @@ cursor:pointer;
       <div class="description">Printing Ticket</div>
     </div>
   </div>
+  <div class="step">
+    <a href='logout.php' class='ui button small blue right floated'>Logout</a>
+  </div>
 </div>
 </div>
 <br>
@@ -127,12 +137,12 @@ cursor:pointer;
 <form class="ui form attached fluid loading segment" onsubmit="return billing(this)">
     <div class="field">
       <label>Full name</label>
-      <input placeholder="Full name" type="text" id="fullname" required>
+      <input placeholder="Full name" type="text" id="fullname" value="<?php echo $row['first_name'];?> <?php echo $row['last_name'];?>" required>
     </div>
 
   <div class="field">
     <label>Contact/Mobile or Email address</label>
-    <input placeholder="Mobile No/Contact or Email address" type="text" id="contact" required>
+    <input placeholder="Mobile No/Contact or Email address" type="text" id="contact" value="<?php echo $row['email'];?>" required>
   </div>
 
  <div class="field">
@@ -211,3 +221,8 @@ cursor:pointer;
 </div>
 </body>
 </html>
+<?php
+} else {
+    require_once 'login.php';
+}
+?>

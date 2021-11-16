@@ -71,7 +71,12 @@
                      <label>I agree to the Terms and Conditions</label>
                   </div>
                </div>
-               <button type="submit" name="submit" class="ui button">Submit</button>
+               <div class="field">
+                  <button type="submit" name="submit" class="ui button">Submit</button>
+               </div>
+               <div class="field right center aligned">
+                  <label>Already have an account? <a href="login.php">Sign In</a></label>
+               </div>
             </form>
          </div>
       </div>

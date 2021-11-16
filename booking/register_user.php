@@ -2,7 +2,7 @@
 
 if($_POST) {
 	// database connection
-	$conn = new mysqli("localhost","root","","stadium_mngt");
+	require_once('connect.php');
 
 	// check db connection
 	if($conn->connect_error) {
