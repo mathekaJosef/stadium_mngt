@@ -86,7 +86,7 @@
                   <input type="submit" name="submit" class="ui button" value="Login">
                </div>
                <div class="field right center aligned">
-                  <label>Do not have an account? <a href="register.php">Sign Up</a></label>
+                  <label>Do not have an account? <a href="register.php">Sign Up</a></label> 
                </div>
             </form>
          </div>
