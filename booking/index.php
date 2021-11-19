@@ -74,6 +74,6 @@ setTimeout(function(){$('#proceed').siblings().hide();$('.gload').hide();documen
 </html>
 <?php
 } else {
-    require_once 'login.php';
+    require_once 'login.php'; 
 }
 ?>
