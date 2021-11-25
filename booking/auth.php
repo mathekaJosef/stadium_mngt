@@ -25,7 +25,7 @@
             $valid['message'] = $_SESSION["username"];
         } 
         else {
-            $valid['success'] = false;
+            $valid['success'] = false; 
             $valid['message'] = "Wrong Credentials/Token";
         }
 
