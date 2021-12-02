@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!empty($_SESSION["username"])) {
-    require_once('connect.php');
+    require_once('connect.php'); 
     $username = $_SESSION["username"];
     $sql = mysqli_query($conn, "SELECT * FROM registered_users WHERE username = '$username'");
     $row = mysqli_fetch_array($sql);
