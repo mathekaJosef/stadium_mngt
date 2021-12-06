@@ -59,7 +59,7 @@ echo ("<div class='ui negative message' style='margin:auto'>Error! Could not pro
 ?>
 		<div class="row">
             <table class="ui single line striped selectable center aligned  table">
-<thead><tr><th>#Ticket Ref</th><th>User Name</th><th>Contact/Email</th><th>Stadium Class Reserved</th><th>Venue</th><th>#No Seats</th><th>Event Date</th><th>Operation</th></tr></thead>
+<thead><tr><th>#Ticket Ref</th><th>User Name</th><th>Stadium Class Reserved</th><th>Venue</th><th>#No Seats</th><th>Event Date</th><th>Operation</th></tr></thead>
 <tbody>
 <?php
 require("../dbengine/dbconnect.php");
@@ -71,7 +71,7 @@ if(($data) && (mysqli_num_rows($data) >0)){
 //getting data and generating a row
 while($row=mysqli_fetch_assoc($data))
 {$order=$row['order_ref'];
-echo("<tr><td>".$row['order_ref']."</td><td>".$row['fullname']."</td><td>".$row['contact']."</td><td>".$row['class_reserved']."</td><td>".$row['destination']."</td><td>".$row['seats_reserved']."</td><td>".$row['date_reserved']."</td><td><a class='ui tiny button orange' href='bookings.php?reject=$order'>Reject</a></td></tr>");
+echo("<tr><td>".$row['order_ref']."</td><td>".$row['fullname']."</td><td>".$row['class_reserved']."</td><td>".$row['destination']."</td><td>".$row['seats_reserved']."</td><td>".$row['date_reserved']."</td><td><a class='ui tiny button orange' href='bookings.php?reject=$order'>Reject</a></td></tr>");
 }		
 }
 else{

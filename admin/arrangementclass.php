@@ -19,13 +19,6 @@
     <div class="ui inverted huge borderless fixed fluid menu">
       <a class="header item">MACHAKOS STADIUM SYSTEM</a>
       <div class="right menu">
-        <div class="item">
-          <div class="ui small input">
-		  <form>
-            <input placeholder="Search ticket.." name="search" />
-			</form>
-          </div>
-        </div>
         <a class="item" href="logout.php">Log out</a>
       </div>
     </div>
@@ -46,26 +39,40 @@
         <div class="ui horizontal divider"> Arrangement Classes Available</div>      
 		<div class="row">
             <table class="ui single line striped selectable center aligned  table">
-<thead><tr><th>#Arrangment_Class_ID</th><th>Stadium Class</th><th>Class Capacity</th><th>Class Price</th><th>Description/Offer</th></tr></thead>
+<thead><tr><th>Stadium Class</th><th>Class Capacity</th><th>Class Price (Ksh)</th><th>Description/Offer</th></tr></thead>
 <tbody>
-<?php
-require("../dbengine/dbconnect.php");
-if(isset($_GET['search'])){$search=$_GET['search'];$data=mysqli_query($conn,"SELECT * FROM available_class WHERE class_id LIKE '%$search%' or class_name LIKE '%$search%'");}
-else{$data=mysqli_query($conn,"SELECT * FROM available_class");}
-
-if(($data) && (mysqli_num_rows($data) >0)){
-
-//getting data and generating a row
-while($row=mysqli_fetch_assoc($data))
-{
-echo("<tr><td>".$row['class_id']."</td><td>".$row['class_name']."</td><td>".$row['class_capacity']."</td><td>".$row['class_price']."</td><td>".$row['description']."</td></tr>");
-}		
-}
-else{
-echo "<tr><td colspan='5'>No records match found! </td></tr>";	
-}
-mysqli_close($conn);
-?>
+  <tr>
+    <td>VVIP</td>
+    <?php
+     require_once('../dbengine/dbconnect.php');
+     $sql1 = mysqli_query($conn, "SELECT COUNT(seats_reserved) AS num FROM booking_details WHERE class_reserved = 'VVIP'");
+     $row1 = mysqli_fetch_assoc($sql1);
+    ?>
+    <td><?php echo $row1['num'];?></td>
+    <td>1000</td>
+    <td>#</td>
+  </tr>
+  <tr>
+    <td>VIP</td>
+    <?php
+     require_once('../dbengine/dbconnect.php');
+     $sql2 = mysqli_query($conn, "SELECT COUNT(seats_reserved) AS num FROM booking_details WHERE class_reserved = 'VIP'");
+     $row2 = mysqli_fetch_assoc($sql2);
+    ?>
+    <td><?php echo $row2['num'];?></td>
+    <td>500</td>
+    <td>#</td>
+  </tr>
+  <tr>
+    <td>Regular</td>
+    <?php
+     $sql3 = mysqli_query($conn, "SELECT COUNT(seats_reserved) AS num FROM booking_details WHERE class_reserved = 'Regular'");
+     $row3 = mysqli_fetch_assoc($sql3);
+    ?>
+    <td><?php echo $row3['num'];?></td>
+    <td>200</td>
+    <td>#</td>
+  </tr>
 </tbody>
             </table>
             </div>

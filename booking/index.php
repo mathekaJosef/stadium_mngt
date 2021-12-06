@@ -28,10 +28,10 @@ a{
     </div><br>
 <div class="ui text container" style="margin-top:90px">
 <div id="err001" class="ui icon small attached message">
-<i class="notched circle loading icon gload"></i>
+<!-- <i class="notched circle loading icon gload"></i> -->
 <div class="content">
-<div class="header">Generating Ticket Ref....</div>
-<p>Requesting for Ticket Ref.. just a sec.</p>
+<!-- <div class="header">Generating Ticket Ref....</div>
+<p>Requesting for Ticket Ref.. just a sec.</p> -->
 <div id="proceed"></div>
 </div>
 </div>
@@ -68,7 +68,7 @@ generate_order();
 ?>
 
 <script>
-setTimeout(function(){$('#proceed').siblings().hide();$('.gload').hide();document.getElementById("proceed").innerHTML="<a href='booking.php' class='ui button small green'>Done! Proceed</a> <a href='../admin/login.php' class='ui button small orange'>Admin Login</a> <a href='logout.php' class='ui button small blue right floated'>Logout</a> "},5000);
+setTimeout(function(){$('#proceed').siblings().hide();$('.gload').hide();document.getElementById("proceed").innerHTML="<a href='booking.php' class='ui button small green'>Proceed</a> <a href='logout.php' class='ui button small blue right floated'>Logout</a> "},1000);
 </script>
 </body>
 </html>

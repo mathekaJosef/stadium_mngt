@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome to Swagfin Inc</title>
+<title>Admin Sign In</title>
 
     <link href="static/dist/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="static/dist/jquery/jquery.min.js"></script>

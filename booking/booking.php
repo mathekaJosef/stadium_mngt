@@ -85,7 +85,7 @@ cursor:pointer;
 <div class="ui container text" id="booking-page">
 <div class="ui attached message">
   <div class="header">Booking Info</div>
-    <div class="header">Ticket Ref: <span style="color:red;font-size:15px"><?php echo $_SESSION['ORDERREF']?> <a href='index.php'>Cancel Booking</a></span> </div> 
+    <div class="header"><span style="color:red;font-size:15px"> <a href='index.php'>Cancel Booking</a></span> </div> 
   <p>Enter stadium booking info</p>
 </div>
 
@@ -102,11 +102,11 @@ cursor:pointer;
 <div class="field">  
     <label>Arrangement Class</label><span><a href="home.php">Learn more</a><i> about stadium arrangement classes</i></span>
  <div class="field">
-    <select name="gender" required id="travelclass">
-      <option value="" selected disabled>--Arrangement Class--</option>
-      <option>VVIP Class</option>
-      <option>VIP Class</option>
-	   <option>Regular Class</option>
+    <select id="travelclass" onChange="changeClass()" required>
+      <option disalbed selected>--Arrangement Class--</option>
+      <option value="VVIP">VVIP Class</option>
+      <option value="VIP">VIP Class</option>
+	   <option value="Regular">Regular Class</option>
     </select>
   </div>   
   </div>
@@ -122,7 +122,7 @@ cursor:pointer;
   </div>
   <div style="text-align:center">
  <div><label>Ensure all booking details have been filled correctly</label></div>
-  <button class="ui green submit button">Submit Details</button>
+  <button id="submitDetails" class="ui green submit button">Submit Details</button>
 </div> 
  </form>
 </div>
@@ -131,7 +131,7 @@ cursor:pointer;
 <div class="ui container text" id="contact-page" style="display:none">
 <div class="ui attached message">
   <div class="header">Enter your Details! </div>
-   <div class="header">Ticket Ref: <span style="color:red;font-size:15px"><?php echo $_SESSION['ORDERREF']?> <a href='index.php'> Cancel Booking</a></span> </div>
+   <div class="header"><span style="color:red;font-size:15px"><a href='index.php'> Cancel Booking</a></span> </div>
   <p>Fill the required Fields</p>
 </div>
 <form class="ui form attached fluid loading segment" onsubmit="return billing(this)">
@@ -150,9 +150,9 @@ cursor:pointer;
  <div class="field">
     <select name="gender" required id="gender">
       <option value="" selected disabled>--Choose Gender--</option>
-      <option value="MALE">Male</option>
-      <option value="FEMALE">Female</option>
-      <option value="FEMALE">None</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
     </select>
   </div>   
   </div>
@@ -168,7 +168,7 @@ cursor:pointer;
 <div class="ui container text" id="billing-page" style="display:none">
 <div class="ui attached message">
   <div class="header">Validate Payment Information</div>
-    <div class="header">Ticket Ref: <span style="color:red;font-size:15px"><?php echo $_SESSION['ORDERREF']?> <a href='index.php'>Cancel Booking</a></span> </div> 
+    <div class="header"><span style="color:red;font-size:15px"> <a href='index.php'>Cancel Booking</a></span> </div> 
   <p>Enter Payment Details to Proceed</p>
 </div>
 
@@ -219,6 +219,22 @@ cursor:pointer;
 </div>
 
 </div>
+<script>
+  function changeClass() {
+    arrangementClass = document.querySelector('#travelclass');
+
+    document.getElementById("submitDetails").addEventListener("click", () => {
+      // console.log(arrangementClass.value);
+      if(arrangementClass.value == "VVIP"){
+        document.getElementById('amount').value = "1000";
+      } else if (arrangementClass.value == "VIP"){
+        document.getElementById('amount').value = "500";
+      }else{
+        document.getElementById('amount').value = "200";
+      }
+    });
+  }
+</script>
 </body>
 </html>
 <?php
