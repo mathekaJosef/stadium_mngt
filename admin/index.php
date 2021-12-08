@@ -1,9 +1,8 @@
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MACHAKOS STADIUM SYSTEM</title>
-
 <link rel="stylesheet" type="text/css" href="static/dist/semantic-ui/semantic.min.css">
 <script src="static/dist/jquery/jquery.min.js"> </script>
 <script src="static/dist/semantic-ui/semantic.min.js"></script>
