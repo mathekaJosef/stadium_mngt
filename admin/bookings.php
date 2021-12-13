@@ -16,7 +16,7 @@
 	<script src="admin.js"></script>
   </head>
   <body>
-    <div class="ui inverted huge borderless fixed fluid menu">
+    <div class="ui inverted huge borderless fixed fluid menu" >
       <a class="header item">MACHAKOS STADIUM SYSTEM</a>
       <div class="right menu">
         <div class="item">
